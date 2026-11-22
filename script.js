@@ -1,7 +1,11 @@
 let button = document.querySelectorAll("button");
 let win = document.getElementById("win");
+let gameOver = false;
 button.forEach((butt) => {
   butt.addEventListener("click", (e) => {
+    if(gameOver){
+        return;
+    }
     if (e.target.textContent !== "") {
       return;
     }
@@ -49,6 +53,7 @@ button.forEach((butt) => {
     })
     if(computerWinner){
      win.textContent="Computer Win,You lose!"
+     gameOver=true;
     }
   });
 });
