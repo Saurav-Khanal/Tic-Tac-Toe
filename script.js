@@ -29,5 +29,15 @@ button.forEach((butt) => {
         [0,4,8],
         [2,4,6]
     ];
+    let winner=winningCombinations.some((combination)=>{
+        return(
+            button[combination[0]].textContent==="X" &&
+            button[combination[1]].textContent==="X" &&
+            button[combination[2]].textContent==="X"
+        )
+    })
+    if(winner){
+        document.write("You win,Congratulation");
+    }
   });
 });
