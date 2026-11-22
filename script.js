@@ -40,5 +40,15 @@ button.forEach((butt) => {
     const randomNumber = Math.floor(Math.random() * emptyLength);
     console.log(randomNumber);
     emptyButton[randomNumber].textContent = "O";
+    let computerWinner=winningCombinations.some((combination)=>{
+        return(
+        button[combination[0]].textContent === "O" &&
+        button[combination[1]].textContent === "O" &&
+        button[combination[2]].textContent === "O"
+        )
+    })
+    if(computerWinner){
+     win.textContent="Computer Win,You lose!"
+    }
   });
 });
