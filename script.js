@@ -1,5 +1,5 @@
 let button = document.querySelectorAll("button");
-let win=document.getElementById("win");
+let win = document.getElementById("win");
 button.forEach((butt) => {
   butt.addEventListener("click", (e) => {
     if (e.target.textContent !== "") {
@@ -7,6 +7,26 @@ button.forEach((butt) => {
     }
     if (e.target.textContent === "") {
       e.target.textContent = "X";
+    }
+     let winningCombinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    let winner = winningCombinations.some((combination) => {
+      return (
+        button[combination[0]].textContent === "X" &&
+        button[combination[1]].textContent === "X" &&
+        button[combination[2]].textContent === "X"
+      );
+    });
+    if (winner) {
+      return win.textContent = "Congratulation,You win";
     }
     let emptyButton = Array.from(button).filter((ele) => {
       return ele.textContent === "";
@@ -20,25 +40,5 @@ button.forEach((butt) => {
     const randomNumber = Math.floor(Math.random() * emptyLength);
     console.log(randomNumber);
     emptyButton[randomNumber].textContent = "O";
-    let winningCombinations=[
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6]
-    ];
-    let winner=winningCombinations.some((combination)=>{
-        return(
-            button[combination[0]].textContent==="X" &&
-            button[combination[1]].textContent==="X" &&
-            button[combination[2]].textContent==="X"
-        )
-    })
-    if(winner){
-        win.textContent="Congratulation,You win";
-    }
   });
 });
