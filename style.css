@@ -46,3 +46,9 @@ button{
     color:white;
     font-size:50px;
 }
+
+#win{
+    color:rgb(242, 148, 164);
+    letter-spacing: 1px;
+    font-size: 25px;
+}

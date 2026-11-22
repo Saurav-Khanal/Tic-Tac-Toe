@@ -1,4 +1,5 @@
 let button = document.querySelectorAll("button");
+let win=document.getElementById("win");
 button.forEach((butt) => {
   butt.addEventListener("click", (e) => {
     if (e.target.textContent !== "") {
@@ -37,7 +38,7 @@ button.forEach((butt) => {
         )
     })
     if(winner){
-        document.write("You win,Congratulation");
+        win.textContent="Congratulation,You win";
     }
   });
 });
