@@ -1,5 +1,6 @@
 let button = document.querySelectorAll("button");
 let win = document.getElementById("win");
+let restart=document.getElementById("restart");
 let gameOver = false;
 button.forEach((butt) => {
   butt.addEventListener("click", (e) => {
@@ -57,3 +58,7 @@ button.forEach((butt) => {
     }
   });
 });
+
+restart.addEventListener("click",()=>{
+  window.location.reload();
+})
